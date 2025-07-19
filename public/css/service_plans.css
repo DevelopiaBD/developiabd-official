@@ -1,0 +1,216 @@
+    .ServiceContainer{
+            max-width: 1280px; /* max-w-7xl */
+            margin-left: auto;
+            margin-right: auto;
+            padding-bottom: 3rem; 
+            padding-left: 1rem; 
+            padding-right: 1rem;
+            order: 1;
+        }
+
+        @media (min-width: 640px) { /* sm:px-6 */
+            .ServiceContainer{
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+
+            }
+        }
+
+        @media (min-width: 1024px) { /* lg:px-8 */
+            .ServiceContainer{
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
+        }
+        @media (max-width: 600px) { /* lg:px-8 */
+            .ServiceContainer{
+                /* margin-top: 100px; */
+
+            }
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-size: 1rem; /* text-base */
+            color: #6427ff; /* text-indigo-600 */
+            letter-spacing: 0.05em; /* tracking-wide */
+            text-transform: uppercase; /* uppercase */
+        }
+
+        .section-title {
+            margin-top: 0.5rem; /* mt-2 */
+            font-size: 2rem; /* text-3xl */
+            line-height: 2.25rem; /* leading-8 */
+            letter-spacing: -0.025em; /* tracking-tight */
+            color: #1f2937; /* text-gray-900 */
+        }
+
+        @media (max-width: 640px) { /* sm:text-4xl */
+            .section-title {
+                font-size: 25px;
+            }
+        }
+
+        .section-description {
+            margin-top: 1rem; /* mt-4 */
+            max-width: 42rem; /* max-w-2xl */
+            font-size: 1.25rem; /* text-xl */
+            color: #6b7280; /* text-gray-500 */
+            margin-left: auto; /* lg:mx-auto */
+            margin-right: auto; /* lg:mx-auto */
+        }
+
+
+        @media (max-width: 640px) { /* sm:text-4xl */
+            .section-description {
+                font-size: 20px;
+            }
+        }
+
+
+
+
+        /* Flexbox Container for Cards */
+        .flex-container {
+            margin-top: 4rem; /* mt-16 */
+            display: flex;
+            flex-wrap: wrap; /* Allows items to wrap to the next line */
+            justify-content: center; /* Center items horizontally */
+            gap: 2rem; /* gap-8, spacing between cards */
+        }
+
+        .card {
+            background-color: #09001f;
+            border-radius: 1rem; /* Rounded corners */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            padding: 1.5rem; /* p-6 */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            flex: 1 1 300px; /* flex-grow, flex-shrink, flex-basis */
+            /* This makes cards flexible: they can grow, shrink, and have a base width of 300px.
+               They will wrap to the next line if there isn't enough space. */
+            max-width: 350px; /* Ensures cards don't get too wide on larger screens */
+            aspect-ratio: 4/6;
+        }
+
+        @media (min-width: 768px) { /* Adjust flex-basis for 2 columns on medium screens */
+            .card {
+                flex-basis: calc(50% - 1rem); /* 2 columns with gap */
+                
+            }
+        }
+
+        @media (min-width: 1024px) { /* Adjust flex-basis for 3 columns on large screens */
+            .card {
+                flex-basis: calc(33.333% - 1.333rem); /* 3 columns with gap */
+            }
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15), 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-icon-wrapper {
+            margin-bottom: 1rem; /* mb-4 */
+        }
+
+        .card-icon {
+            height: 4rem; /* h-16 */
+            width: 4rem; /* w-16 */
+            color: #6366f1; /* text-indigo-500 */
+            fill: none;
+            stroke: currentColor;
+        }
+
+        .card-title {
+            font-size: 1.5rem; /* text-2xl */
+            color: #ffffff; /* text-gray-900 */
+            margin-bottom: 0.75rem; /* mb-3 */
+        }
+
+        .card-description {
+            color: #8d9197; /* text-gray-600 */
+            margin-bottom: 1.5rem; /* mb-6 */
+            flex-grow: 1;
+        }
+
+        .feature-list {
+            color: #f5f9ff; /* text-gray-700 */
+            text-align: left;
+            width: 100%;
+            margin-bottom: 1.5rem; /* mb-6 */
+            list-style: none; /* Remove default list style */
+            padding: 0; /* Remove default padding */
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem; /* space-y-2 */
+        }
+
+        .feature-icon {
+            height: 1.25rem; /* h-5 */
+            width: 1.25rem; /* w-5 */
+            color: #22c55e; /* text-green-500 */
+            margin-right: 0.5rem; /* mr-2 */
+            fill: currentColor;
+        }
+
+        .buttons{
+            color: white;
+            display: flex;
+            width: 90%;
+            justify-content: space-between;
+        }
+
+          @media (max-width: 600px){
+            .card{
+                max-width: 350px;
+                width: 90%;
+            }
+            .buttons{
+                width: 96%;
+            }
+        }
+
+        
+        .buttons .price{
+            text-align: start;
+            font-size: 20px;
+            color: #ffffff;
+        }
+        .buttons .ttspan{
+            text-align: start;
+            font-size: 10px;
+            color: #cecfff;
+        }
+
+        .btn-primary {
+            background-color: #6366f1; /* Indigo 500 */
+            color: #ffffff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            transition: background-color 0.3s ease-in-out;
+            text-decoration: none; /* Remove underline from links */
+            display: inline-block; /* Ensure padding and margin work correctly */
+        }
+
+        @media (max-width: 400px){
+            .btn-primary{
+                padding: 5px 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+        .btn-primary:hover {
+            background-color: #4f46e5; /* Indigo 600 */
+        }

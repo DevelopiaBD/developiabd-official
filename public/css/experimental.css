@@ -1,0 +1,55 @@
+.bee-hover {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  position: fixed;
+  top: auto;
+  left: auto;
+  animation: hover-float 2s ease-in-out infinite;
+  z-index: 999;
+  /* overflow: hidden; */
+  transition: all 1s ease-in-out;
+  /* border: 5px solid rgb(222, 0, 85); */
+}
+
+.bee-hover::after {
+  content: attr(msg-add);
+  height: auto;
+  max-width: 200px;
+  width: 0;
+  position: absolute;
+  border-radius: 10px;
+  bottom: 50%;
+  left: calc(100% + 5px);
+  transition: 0.1s ease-in-out;
+  overflow: hidden;
+  text-align: center;
+
+  transform: translateY(50%);
+  color: rgb(5, 5, 5);
+  backdrop-filter: blur(10px);
+  text-wrap: nowrap;
+  background-color: rgba(255, 255, 255, 0.526);
+
+}
+.bee-hover.msg::after {
+  animation: flowMsg 5s normal 2s ease-in-out;
+}
+@keyframes flowMsg {
+  10%, 70%{width: 200px; padding: 10px;}
+  99%{width: 0; padding: 0px; font-size: 15px;}
+  100%{width: 0; padding: 0; font-size: 0px;}
+}
+
+.bee-hover img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  border-radius: 50%;
+
+}
+
+@keyframes hover-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}

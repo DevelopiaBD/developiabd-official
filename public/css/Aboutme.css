@@ -1,0 +1,201 @@
+ @keyframes floatEffect1 {
+            0% { transform: translate(0, 0) rotate(0deg) scale(1); opacity: 0.9; }
+            25% { transform: translate(40px, -60px) rotate(30deg) scale(1.3); opacity: 1; }
+            50% { transform: translate(0, 0) rotate(0deg) scale(1); opacity: 0.9; }
+            75% { transform: translate(-40px, 60px) rotate(-30deg) scale(1.3); opacity: 1; }
+            100% { transform: translate(0, 0) rotate(0deg) scale(1); opacity: 0.9; }
+        }
+
+        @keyframes floatEffect2 {
+            0% { transform: translate(0, 0) rotate(0deg) scale(1); opacity: 0.8; }
+            25% { transform: translate(-50px, 40px) rotate(-25deg) scale(1.25); opacity: 0.95; }
+            50% { transform: translate(0, 0) rotate(0deg) scale(1); opacity: 0.8; }
+            75% { transform: translate(50px, -40px) rotate(25deg) scale(1.25); opacity: 0.95; }
+            100% { transform: translate(0, 0) rotate(0deg) scale(1); opacity: 0.8; }
+        }
+
+        .about-container {
+            max-width: 960px;
+            width: 90%;
+            height: auto; /* Fixed height */
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.25); /* More transparent white for glass effect */
+            border-radius: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.3); /* Crispier border */
+            box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.45); /* Stronger glass morphism shadow */
+            backdrop-filter: blur(15px); /* Increased blur for stronger glass effect */
+            -webkit-backdrop-filter: blur(15px);
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            transition: all 0.4s ease-in-out; /* Smoother transition */
+        }
+
+        /* Pseudo-elements for floating colors - more prominent */
+        .about-container::before,
+        .about-container::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(35px); /* Crispier blur */
+            opacity: 0; /* Hidden by default */
+            transition: opacity 0.6s ease-in-out; /* Slower fade in/out */
+            z-index: -1;
+            box-shadow: 0 0 25px rgba(0,0,0,0.2); /* Added subtle shadow to floating elements */
+        }
+
+        .about-container::before {
+            width: 200px; /* Larger */
+            height: 200px;
+            background: linear-gradient(135deg, #6366f1, #FF1493); /* Indigo to Deep Pink */
+            top: -50px; /* More initial offset */
+            left: -50px;
+        }
+
+        .about-container::after {
+            width: 230px; /* Larger */
+            height: 230px;
+            background: linear-gradient(45deg, #FF1493, #6366f1); /* Deep Pink to Indigo */
+            bottom: -50px; /* More initial offset */
+            right: -50px;
+        }
+
+        /* :hover */
+        .about-container::before {
+            opacity: 1; 
+            animation: floatEffect1 7s ease-in-out infinite alternate; 
+        }
+
+        /* :hover */
+        .about-container::after {
+            opacity: 0.95; 
+            animation: floatEffect2 8s ease-in-out infinite alternate; 
+        }
+
+        @media (min-width: 768px) {
+            .about-container {
+                flex-direction: row;
+                text-align: left;
+                padding: 2rem;
+            }
+        }
+
+        .about-image-wrapper {
+            flex-shrink: 0;
+            margin-bottom: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .about-image-wrapper {
+                margin-right: 2rem;
+                margin-bottom: 0;
+            }
+        }
+
+        .about-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #6366f1; /* Indigo border */
+            box-shadow: 0 0 0 3px #FF1493; /* Dark pink outer glow */
+        }
+
+        .about-content {
+            flex-grow: 1;
+            /* overflow-y: auto; */
+            min-height: auto;
+            padding-right: 0.5rem;
+            /* Custom scrollbar for better aesthetics within fixed height */
+            scrollbar-width: thin; /* Firefox */
+            scrollbar-color: #6366f1 #f1f1f1; /* thumb and track color */
+        }
+
+        .about-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .about-content::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        .about-content::-webkit-scrollbar-thumb {
+            background-color: #6366f1;
+            border-radius: 10px;
+            border: 2px solid #f1f1f1;
+        }
+
+
+        .about-title {
+            font-size: 1.8rem;
+            color: #1f2937; /* Dark gray for strong contrast */
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .about-subtitle {
+            font-size: 1rem;
+            color: #FF1493; /* Dark pink for emphasis */
+            margin-bottom: 0.75rem;
+        }
+
+        .about-paragraph {
+            font-size: 0.9rem;
+            color: #374151; /* Darker gray for better readability on glass */
+            line-height: 1.5;
+            margin-bottom: 0.75rem;
+        }
+
+        .about-details-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 1rem 0;
+            text-align: left;
+        }
+
+        .about-details-list li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+            color: #374151;
+            font-size: 0.85rem;
+        }
+
+        .detail-icon {
+            flex-shrink: 0;
+            width: 1rem;
+            height: 1rem;
+            color: #6366f1; /* Indigo checkmark */
+            margin-right: 0.5rem;
+            margin-top: 0.15rem;
+        }
+
+        .social-links {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .social-links {
+                justify-content: flex-start;
+            }
+        }
+
+        .social-link {
+            color: #6366f1; /* Indigo */
+            font-size: 1.5rem;
+            transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+            text-decoration: none;
+        }
+
+        .social-link:hover {
+            color: #FF1493; /* Dark pink on hover */
+            transform: translateY(-3px) scale(1.1); /* Slight scale for more pop */
+        }

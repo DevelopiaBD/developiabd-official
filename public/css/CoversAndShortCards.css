@@ -1,0 +1,305 @@
+
+
+.BannerIntroCoverSection{
+    height: auto;
+    position: relative;
+}
+
+/*  Banner div */
+
+
+
+.bannerMainDiv{
+    max-height: 900px;
+    min-width: 100vw;
+    width: 100%;
+    height: auto;
+    min-height: 400px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    background-color: rgb(35, 2, 154);
+}
+
+@media (max-width: 2300px){
+    .bannerMainDiv{
+        max-height: 700px;
+    }
+}
+
+.bannerMainDiv .bannerDiv{
+    min-width: 100%;
+    height: 100%;
+    display: flex;
+    /* overflow-x: auto; */
+    animation: bannerSlide 4s infinite reverse linear;
+}
+
+.bannerDiv img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+@keyframes bannerSlide{
+    100%{ transform: translateX(-100%); }  
+}
+
+
+
+
+
+
+
+
+.coverDiv {
+    width: 100%;
+    height: 100%;
+    /* min-height: 600px; */
+    position: absolute;
+    display: flex;
+    top: 0;
+    left: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+    background-color: rgba(95, 0, 249, 0.605);
+    background: linear-gradient(rgba(102, 0, 255, 0.641), #9000ff);
+    /* backdrop-filter: blur(4px); */
+    color: white;
+    transition: 0.5s;
+}
+
+
+.coverDiv .textDivMain .buttonsCover{
+    width: auto;
+    display: flex;
+    gap: 10px;
+}
+
+.textDivMain .buttonsCover .pricesAndLink{
+    padding: 5px 10px;
+    font-size: 20px;
+    border-radius: 15px 2px;
+    background-color: white;
+    color: rgb(102, 0, 198);
+}
+
+.coverDiv .textDivMain .buttonsCover .pricesAndLink:first-child{
+    border-radius: 2px 15px;
+
+}
+.coverDiv .textDivMain .buttonsCover .pricesAndLink{
+    width: 100px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+@media (max-width: 1300px){
+    .coverDiv{
+        padding: 0;
+    }
+}
+
+
+.paddingAdjust{
+    height: 80px;
+    width: 100%;
+}
+
+
+.textDivMain{
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    width: 90%;
+    height: auto;
+    min-height: 200px;
+}
+.textDivMain h1{
+    font-size: 250%;
+}
+
+
+
+.shortCardViewMian{
+    display: flex;
+    width: 90vw;
+    overflow: hidden;
+    min-height: 200px;
+    padding-bottom: 10px;
+    position: relative;
+    gap: 30px;
+}
+
+.shortCardViewMian .slideCardBody{
+    width: auto;
+    height: 100%;
+    display: flex;
+    gap: 30px;
+    /* margin-left: 20px; */
+    animation: cardBodySlide 20s infinite 2s linear;
+    width: max-content;
+}
+
+
+
+
+@keyframes cardBodySlide{
+    0%{ transform: translateX(0%); }
+    100%{ transform: translateX(calc(-100% - 30px)); }
+}
+
+
+.shortCardViewMian:hover .slideCardBody{
+animation-play-state: paused;
+}
+
+
+.shortCardViewMian .slideCardBody .shortCardView{
+    min-width: 250px;
+    width: auto;
+    height: 100%;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: rgba(201, 209, 255, 0.38);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.shortCardViewMian .shortCardView .shortCardPara{
+    width: 70%;
+    font-size: 14px;
+}
+
+
+
+
+
+
+
+
+@media (max-width: 1330px) {
+
+  
+    .coverDiv{
+        height: 100%;
+        max-height: none;
+    /* background-image: linear-gradient(rgba(140, 0, 255, 0.641), rgba(80, 36, 255, 0.612)); */
+
+    }
+    .shortCardViewMian .shortCardView{
+        min-width: 200px;
+    }
+      .textDivMain{
+        min-height: auto;
+        text-align: center;
+        gap: 20px;
+
+    }
+
+    .textDivMain h1{
+       font-size: 30px;
+
+    }
+
+
+    /* .bannerDiv img{
+        min-width: 100vw;
+        max-width: none;
+        min-height: 500px;
+        object-fit: cover;
+    } */
+
+
+}
+
+
+@media (max-width: 800px){
+    .bannerMainDiv{
+        /* height: 500px; */
+        height: 500px;
+        min-height: 400px;
+    }
+    .bannerMainDiv .bannerDiv img{
+        /* object-fit: fill; */
+        height: 70%;
+
+    }
+    .shortCardViewMian{
+        min-height: auto;
+    }
+
+    
+    .shortCardViewMian .slideCardBody .shortCardView{
+        /* min-width: 220px; */
+        width: auto;
+        height: 170px;
+        display: flex;
+        gap: 15px;
+        font-size: 80%;
+    }
+
+ 
+}
+
+
+@media (max-width: 620px) {
+ .bannerMainDiv .bannerDiv img{
+        object-fit: fill;
+        /* height: 60%; */
+
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .coverDiv{
+        height: 100%;
+        max-height: none;
+    }
+
+    .bannerMainDiv{
+        max-height: 500px;
+        /* height: 50vh; */
+    }
+
+     .bannerMainDiv .bannerDiv img{
+        object-fit: fill;
+        height: 60%;
+
+    }
+   
+    .shortCardViewMian .shortCardView{
+        min-width: 200px;
+    }
+
+    .textDivMain{
+        min-height: auto;
+        text-align: center;
+        gap: 20px;
+
+    }
+    .textDivMain h1{
+       font-size: 25px;
+
+    }
+
+
+
+}
+
+
+    

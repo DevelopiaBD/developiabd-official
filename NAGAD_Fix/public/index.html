@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nagad Payment Test</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f8f8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+    h2 {
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #e2136e;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #log {
+      margin-top: 20px;
+      max-width: 90%;
+      background: #fff;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      font-family: monospace;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+  </style>
+</head>
+<body>
+  <h2>Nagad Payment Test</h2>
+  <button onclick="pay()">Pay 10 BDT</button>
+  <div id="log"></div>
+
+  <script>
+    async function pay() {
+      const log = document.getElementById("log");
+      log.innerText = "Initiating payment...";
+
+      try {
+        const res = await fetch("/nagad/payment", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            orderId: "ORD_" + Date.now(),
+            amount: "10",
+            ip: "127.0.0.1"
+          })
+        });
+
+        const json = await res.json();
+        console.log(json);
+        log.innerText = JSON.stringify(json, null, 2);
+
+        if (json.success && json.link?.callBackUrl) {
+          window.open(json.link.callBackUrl, "_blank");
+        } else {
+          alert("Failed to generate payment link.");
+        }
+
+      } catch (err) {
+        console.error(err);
+        log.innerText = "Error: " + err.message;
+      }
+    }
+
+    // https://nagodpay.com/api/payment/p2c/nagad/callback
+  </script>
+</body>
+</html>

@@ -1,0 +1,220 @@
+ /* About Section Container */
+        .about-section {
+            width: 80%;
+            max-width: 1200px; /* Max width for content */
+            padding: 0 20px; /* Horizontal padding */
+            box-sizing: border-box; /* Include padding in element's total width and height */
+            text-align: center;
+ 
+        }
+
+
+
+        /* Section Headings */
+        .section-title {
+            font-size: 2.3em;
+            color: #222;
+            margin-bottom: 15px;
+            opacity: 1; /* Initial state for animation */
+            display: none;
+        }
+
+        .section-subtitle {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 60px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 1; /* Initial state for animation */
+            animation-delay: 0.4s;
+            display: none;
+        }
+
+        @media (max-width: 400px){
+            .section-title {
+                display: none;
+            }
+            .section-subtitle {
+                display: none;
+            }
+        }
+
+
+        
+        /* Service Card Styling */
+        .service-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Space between content and image */
+            /* background-color: #fff; */
+            border-radius: 15px;
+            /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);  */
+            margin-bottom: 40px;
+            padding: 30px;
+            gap: 40px; /* Space between flex items */
+            opacity: 1; /* Initial state for animation */
+            width: 100%;
+            transform: translateX(calc(var(--i) * 110vw));
+            /* animation: slideAboutCard 2s normal ease-in-out; */
+            transition: 0.5s;
+        }
+/* .about-section.active */
+         .about-section.active .service-card{
+            transform: translateX(0);
+        }
+        
+        
+
+        /* Animation delay for each card */
+        .service-card:nth-child(1) { animation-delay: 0.6s; }
+        .service-card:nth-child(2) { animation-delay: 0.8s; }
+        .service-card:nth-child(3) { animation-delay: 1.0s; }
+
+        /* Service Content (Text) */
+        .service-content {
+            flex: 1; /* Allows content to take available space */
+            text-align: left;
+          
+        }
+
+        .service-content h3 {
+            font-size: 2em;
+            color: #8800ff; /* DevelopiaBD's accent color */
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .service-content p {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        /* Service Image */
+        .service-image {
+            flex: 1; /* Allows image to take available space */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .about-section.active .service-image{
+            animation: serviceImageFlow 20s infinite  ease-in-out ;
+        }
+        .about-section.active .service-image.service-card:nth-child(2){
+            animation-delay: 3s;
+        }
+        .about-section.active .service-image:nth-child(3){
+            animation-delay: 3.5s;
+        }
+        @keyframes serviceImageFlow{ 
+            30%{
+                rotate: 3deg;
+            }
+            70%{
+                rotate: -3deg;
+            }
+            100%{
+                rotate: 0deg;
+            }
+          
+        }
+
+
+        .service-image img {
+            max-width: 100%; /* Ensure image is responsive */
+            height: auto;
+            border-radius: 10px; /* Slightly rounded corners for images */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); /* Subtle image shadow */
+        }
+
+        /* Alternating Layout for Service Cards */
+        .service-card:nth-of-type(even) {
+            flex-direction: row-reverse; /* Reverse order for even cards (image on left, text on right) */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .section-title {
+                font-size: 2.2em;
+            }
+            .section-subtitle {
+                font-size: 10px;
+                margin-bottom: 40px;
+            }
+            .service-card {
+                flex-direction: column; /* Stack content vertically on smaller screens */
+                text-align: center;
+                padding: 25px;
+                gap: 20px;
+            }
+            .service-card:nth-of-type(even) {
+                flex-direction: column; /* Ensure stacking for even cards too */
+            }
+            .service-content {
+                text-align: center; /* Center text when stacked */
+            }
+            .service-content h3 {
+                font-size: 1.8em;
+            }
+            .service-content p {
+                font-size: 1em;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about-section {
+                padding: 0 15px;
+            }
+            .section-title {
+                font-size: 1.5em;
+            }
+            .section-subtitle {
+                /* font-size: 0.95em; */
+                margin-bottom: 30px;
+            }
+            .service-card {
+                padding: 20px;
+                margin-bottom: 30px;
+            }
+            .service-content h3 {
+                font-size: 1.6em;
+            }
+            .service-content p {
+                font-size: 0.95em;
+            }
+        }
+
+ 
+        @media (max-width: 600px){
+            .service-card .service-content p, .service-card .service-content h3{
+                text-align: justify;
+                width: 100%;
+                hyphens: auto;
+  
+            }
+
+        }
+ 
+        @media (max-width: 500px){
+            .about-section {
+                width: 90%;
+            }
+        }
+
+
+
+        @media (max-width: 480px) {
+     
+            .service-card {
+                padding: 15px;
+                margin-bottom: 25px;
+            }
+            .service-content h3 {
+                font-size: 1.4em;
+            }
+            .service-content p {
+                font-size: 0.9em;
+            }
+        }
+

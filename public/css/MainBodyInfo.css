@@ -1,0 +1,305 @@
+.MainBodyInfoStart{
+    min-height: 1000px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 100px;
+    overflow: hidden;
+    /* background-color: rgb(12, 12, 12); */
+   transition: 0.5s;
+}
+
+.MainBodyInfoStart.active{
+    background-color: transparent;
+}
+
+
+
+/* serviceCardMainDiv................. */
+
+.MainBodyInfoStart .serviceCardMainDiv{
+    width: 80%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    /* display: none; */
+}
+
+.title{
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    transition: 0.54s;
+    margin-top: 50px;
+    /* margin-bottom: 50px; */
+    font-size: 200%;
+    /* display: none; */
+
+
+}
+
+
+.title.active{
+    opacity: 1;
+}
+
+
+.MainBodyInfoStart .serviceCardMainDiv .serviceCard{
+    height: 200px;
+    aspect-ratio: 10/7;
+    /* background-color: #0b0028; */
+    background: conic-gradient(  #16002d 30deg, #300073fa 50deg, #080023 40deg);
+    overflow: hidden;
+    padding: 10px;
+    border-radius: 10px;
+    transition: 0.5s ease-in-out;
+    overflow: hidden;
+    transform: scale(0);
+    position: relative;
+    /* opacity: 0; */
+}
+
+@media (max-width: 800px){
+.MainBodyInfoStart .serviceCardMainDiv{
+    width: 90%;
+    gap: 30px;
+}
+.MainBodyInfoStart .serviceCardMainDiv .serviceCard{
+    height: 200px;
+    /* width: 100%; */
+}
+
+}
+
+
+
+.serviceCardMainDiv .serviceCard .serviceTitle{
+    font-size: 35px;
+    position: absolute;
+    bottom: -50%;
+    left: 50%;
+    transform: translate(-50%);
+    color: rgb(230, 229, 255);
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    transition-delay: 0.3s ;
+    padding: 0px 5px;
+}
+.serviceCardMainDiv .serviceCard.anim:hover .serviceTitle{
+    bottom: 20px;
+    transition-delay: 0.5s ;
+
+}
+
+@media (max-width: 670px){
+    .MainBodyInfoStart .serviceCardMainDiv{
+        width: 90%;
+        gap: 20px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .MainBodyInfoStart .serviceCardMainDiv .serviceCard{
+        height: auto;
+        width: 47%;
+        /* width: 100%; */
+    }
+    
+    
+    .serviceCardMainDiv .serviceCard .serviceTitle{
+        font-size: 30px;
+    }
+    
+    
+    
+}
+
+@media (max-width: 500px){
+    .serviceCardMainDiv .serviceCard .serviceTitle{
+        font-size: 20px;
+    }
+    .serviceCardMainDiv .serviceCard.anim:hover .serviceTitle{
+        bottom: 10px;
+
+    }
+    
+}
+@media (max-width: 400px){
+    .title{
+        margin-bottom: 20px;
+    }
+
+    .serviceCardMainDiv .serviceCard {
+        min-width: 80%;
+    }
+    .serviceCardMainDiv .serviceCard .serviceTitle{
+        font-size: 30px;
+    }
+    .serviceCardMainDiv .serviceCard.anim:hover .serviceTitle{
+        bottom: 25px;
+
+    }
+    
+}
+
+
+.MainBodyInfoStart .serviceCardMainDiv .serviceCard.anim:hover::before{
+    animation: glowCard 2s normal ease-in-out;
+
+
+}
+
+
+.MainBodyInfoStart .serviceCardMainDiv .serviceCard.anim{
+    transform: scale(1.02);
+    /* opacity: 1; */
+}
+
+.MainBodyInfoStart .serviceCardMainDiv .serviceCard.anim::before{
+    content: "";
+    position: absolute;
+    height: 100px;
+    width: 100%;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    transition: 0.5s;
+    background:linear-gradient(rgba(255, 3, 142, 0.724), rgba(255, 0, 0, 0));
+    animation: glowCard 2s normal ease-in-out;
+}
+@keyframes glowCard {
+    50%{
+        opacity: 0.7;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+.MainBodyInfoStart .serviceCardMainDiv .serviceCard:hover::before{
+    opacity: 1;
+
+}
+
+.serviceCardMainDiv .serviceCard img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    /* box-shadow: 2px 2px 3px 3px gray; */
+}
+.serviceCardMainDiv .serviceCard img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: 0.3s ease-in-out;
+    transition-delay: 0.3s;
+    /* box-shadow: 2px 2px 3px 3px gray; */
+}
+
+.serviceCardMainDiv .serviceCard:hover img{
+    transform: translateY(-55%);
+    /* transform: rotate(70deg);
+    transform-origin:right bottom ; */
+}
+
+
+/* serviceCardMainDiv................. */
+
+
+
+
+
+
+
+
+
+
+.AboutCompany{
+    width: 100%;
+    min-height: 400px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    display: none;
+}
+
+
+.AboutCompany .details{
+    max-width: 400px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 20px;
+}
+
+.AboutCompany .details .companyDesc{
+    font-size: 20px;
+    color: #5700b4;
+}
+.AboutCompany .details .companyTitle{
+    font-size: 25px;
+}
+.AboutCompany .details .companyBtn{
+    font-size: 20px;
+    color: white;
+    border-radius: 10px;
+    background-color: rgb(253, 0, 80);
+}
+
+.AboutCompany .compImageRef{
+    height: 300px;
+    aspect-ratio: 1/1;
+}
+
+.AboutCompany .compImageRef img{
+    height: 100%;
+    width: 100%;
+}
+
+
+
+
+
+.MainBodyInfoStart .displayCardMainDiv{
+    z-index: 500;
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding-top: 200px;
+    margin-top: 100px;
+    background-color: rgb(25, 0, 50);
+    order: 6;
+}
+
+.MainBodyInfoStart .displayCardMainDiv .dispCardDiv{
+    width: 350px;
+    aspect-ratio: 16/9;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(119, 0, 255);
+}
+.MainBodyInfoStart .displayCardMainDiv .dispCardDiv img{
+    height: 0;
+    width: 0;
+    transform-origin: center;
+    border-radius: 20px;
+    background-color: rgb(119, 0, 255);
+    transition: 0.5s;
+}
+
+.MainBodyInfoStart .displayCardMainDiv .dispCardDiv:hover img{
+    height: 100%;
+    width: 100%;
+}
