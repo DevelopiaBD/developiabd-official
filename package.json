@@ -1,0 +1,39 @@
+{
+  "name": "developiabd_web",
+  "version": "1.0.0",
+  "description": "DevelopiaBD official web. Web development, graphic design, brand elements",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node ./node_modules/nodemon/bin/nodemon.js index.js"
+  },
+  "keywords": [
+    "DevelopiaBD",
+    "official",
+    "web",
+    "Web",
+    "development",
+    "graphic",
+    "design",
+    "brand",
+    "elements",
+    "logos",
+    "cards",
+    "e-commerce",
+    "dynamic",
+    "web",
+    "low",
+    "budget",
+    "website"
+  ],
+  "author": "Muhammad Abu Yousuf Abir",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.0",
+    "express": "^5.1.0",
+    "mongoose": "^8.16.4",
+    "nodemon": "^3.1.10"
+  }
+}

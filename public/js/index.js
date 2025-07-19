@@ -37,18 +37,6 @@ serviceCardAll.forEach((serviceCard, i)=>{
 
   window.addEventListener("scroll", ()=>{
 
-    console.log(window.scrollY);
-
-    if(window.scrollY > 1000){
-        // slideRocket({top:20, left: 10})
-    }
-    
-    else{
-      // slideRocket({left: 80})
-    }
-
-
-
 
     let ab = serviceCard.getClientRects()[0].top;
     let abM = serviceCardMainDiv.getClientRects()[0].top;
@@ -56,12 +44,12 @@ serviceCardAll.forEach((serviceCard, i)=>{
 
   
     if((window.innerHeight/1.5) > abM){
-
       serviceCard.classList.add("anim")
       title.classList.add("active")
       serviceCard.style.animationDelay=`${i + 1}s`;
 
     }
+   
   })
 })
 
@@ -74,6 +62,8 @@ window.addEventListener("scroll", (e)=>{
     console.log("inner Width:" + window.innerWidth);
     let windHeight = (window.innerHeight / 4); // 1000px
     let objectFromTop = title.getClientRects()[0].top; // from top 500px
+    let abServiceCardabout = serviceCardabout.getClientRects()[0].top;
+
     let aboutSectionTop = aboutSection.getClientRects()[0].top; // from top 500px
     let displayCardMainDivFromTop = displayCardMainDiv.getClientRects()[0].top; // from top 500px
 
@@ -92,10 +82,14 @@ window.addEventListener("scroll", (e)=>{
    
     // aboutSection/....................
       
-    ((window.innerHeight / 2) > aboutSectionTop) < 300 && aboutSection.classList.add("active"); MainBodyInfoStart.classList.add("active");
+    ((window.innerHeight / 2) > aboutSectionTop) && aboutSection.classList.add("active"); MainBodyInfoStart.classList.add("active");
     // aboutSection/....................
  
     
+    if((window.innerHeight/1.5) > abServiceCardabout){
+      serviceCardabout.classList.add("active");
+    }
+
 
     console.log("windowHeght " + windHeight + "     vfvfvfvfvfvfv" + equal);
     

@@ -41,6 +41,10 @@
 
 }
 
+@media (max-width:800px){
+    .title{font-size: 25px;}
+}
+
 
 .title.active{
     opacity: 1;

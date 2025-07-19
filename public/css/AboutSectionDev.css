@@ -56,8 +56,16 @@
             opacity: 1; /* Initial state for animation */
             width: 100%;
             transform: translateX(calc(var(--i) * 110vw));
-            /* animation: slideAboutCard 2s normal ease-in-out; */
             transition: 0.5s;
+        }
+        .service-card.active{
+            animation: slideAboutCard 2s normal 5s ease-in-out;
+        }
+
+        @keyframes  slideAboutCard{
+            to{
+                transform: translateX(0);
+            }
         }
 /* .about-section.active */
          .about-section.active .service-card{
