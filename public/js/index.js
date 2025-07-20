@@ -65,10 +65,10 @@ window.addEventListener("scroll", (e)=>{
     let abServiceCardabout = serviceCardabout.getClientRects()[0].top;
 
     let aboutSectionTop = aboutSection.getClientRects()[0].top; // from top 500px
-    let displayCardMainDivFromTop = displayCardMainDiv.getClientRects()[0].top; // from top 500px
+    // let displayCardMainDivFromTop = displayCardMainDiv.getClientRects()[0].top; 
 
     let equal = ( windHeight > objectFromTop)
-    let equal2 = ( windHeight > displayCardMainDivFromTop)
+    // let equal2 = ( windHeight > displayCardMainDivFromTop)
 
   if(window.scrollY > 400){
       navbarFullDiv.classList.add("bg_change")

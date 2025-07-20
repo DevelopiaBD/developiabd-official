@@ -32,6 +32,7 @@
         }
 
         @media (max-width: 400px){
+
             .section-title {
                 display: none;
             }
@@ -206,7 +207,7 @@
  
         @media (max-width: 500px){
             .about-section {
-                width: 90%;
+                width: 95%;
             }
         }
 

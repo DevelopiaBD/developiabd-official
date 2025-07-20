@@ -290,6 +290,7 @@ a, button{
         border-radius: 30px;
         backdrop-filter: blur(10px);
         background-color: rgb(255, 255, 255);
+        /* border: 5px solid rgb(72, 0, 255); */
 
     }
 

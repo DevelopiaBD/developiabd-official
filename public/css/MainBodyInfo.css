@@ -1,5 +1,6 @@
 .MainBodyInfoStart{
     min-height: 1000px;
+    padding-bottom: 100px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -283,6 +284,7 @@
     margin-top: 100px;
     background-color: rgb(25, 0, 50);
     order: 6;
+    display: none;
 }
 
 .MainBodyInfoStart .displayCardMainDiv .dispCardDiv{
