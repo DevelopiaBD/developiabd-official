@@ -415,7 +415,7 @@
             
             
             
-            
+            <!-- <video style="order: 6;" autoplay src="/assets/videos/Marketing_Video_Prompt_Generation.mp4 "></video> -->
             
             
             <div class="about-container">
@@ -556,26 +556,26 @@
     <section class="contactFormDiv">
         <h1 class="contactTitle" title="Contact For web development, Graphic Designs, Branding">Contact Now</h1>
 
-        <form class="form">
+        <form class="form" id="contact_form">
             <div class="inputDiv">
                 <label for="name">Name:</label>
-                <input type="text" name="name" id="name" placeholder="Your Name" class="nameDiv">
+                <input type="text" name="name" id="name" placeholder="Your Name" class="nameDiv inputValFN">
             </div>
             <div class="inputDiv">
                 <label for="email">E-mail:</label>
-                <input type="text" name="email" id="email" placeholder="Your Email" class="emailDiv">
+                <input type="email" name="email" id="email" placeholder="Your Email" class="emailDiv inputValFN">
             </div>
             <div class="inputDiv">
                 <label for="phone">Phone:</label>
-                <input type="text" name="phone" id="phone" placeholder="Your Phone" class="phoneDiv">
+                <input type="number" name="phone" id="phone" placeholder="Your Phone" class="phoneDiv inputValFN">
             </div>
             <div class="inputDiv">
                 <label for="country">Country:</label>
-                <input type="text" name="country" id="country" placeholder="Bangladesh, USA, UK" class="phoneDiv">
+                <input type="text" name="country" id="country" placeholder="Bangladesh, USA, UK" class="phoneDiv inputValFN">
             </div>
             <div class="inputDiv messageInp">
                 <label for="message">Message:</label>
-                <textarea type="message" name="message" id="message" placeholder="Your Message" class="messageDiv"></textarea>
+                <textarea type="message" name="message" id="message" placeholder="Your Message" class="messageDiv inputValFN"></textarea>
             </div>
 
 
@@ -604,6 +604,6 @@
 
 
 
-<script src="./js/index.js?v=2"></script>    
+<script src="./js/index.js?v=2" defer type="module"></script>    
 </body>
 </html>

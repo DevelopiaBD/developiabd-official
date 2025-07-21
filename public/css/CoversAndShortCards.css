@@ -18,7 +18,7 @@
     overflow: hidden;
     position: relative;
     display: flex;
-    background-color: rgba(96, 5, 255, 0.705);
+    background-color: rgb(111, 0, 255);
     /* background-image: linear-gradient(rgba(116, 5, 144, 0.417), rgba(0, 10, 151, 0.434)); */
 }
 
@@ -238,7 +238,7 @@ animation-play-state: paused;
     }
     .bannerMainDiv .bannerDiv img{
         /* object-fit: fill; */
-        height: 70%;
+        height: 60%;
 
     }
     .shortCardViewMian{
@@ -261,8 +261,8 @@ animation-play-state: paused;
 
 @media (max-width: 620px) {
  .bannerMainDiv .bannerDiv img{
-        object-fit: fill;
-        /* height: 60%; */
+        /* object-fit: fill; */
+        height: 60%;
 
     }
 }
@@ -282,7 +282,7 @@ animation-play-state: paused;
 
      .bannerMainDiv .bannerDiv img{
         object-fit: fill;
-        height: 60%;
+        height: 57%;
 
     }
    

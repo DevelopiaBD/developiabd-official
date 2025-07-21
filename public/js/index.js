@@ -1,4 +1,7 @@
 
+import "./conatactMessage.js"
+
+
 window.addEventListener("load", ()=>{
   slideRocket({top:-20, left: -48})
 
@@ -40,7 +43,6 @@ serviceCardAll.forEach((serviceCard, i)=>{
 
     let ab = serviceCard.getClientRects()[0].top;
     let abM = serviceCardMainDiv.getClientRects()[0].top;
-    console.log((window.innerHeight/2) > ab);
 
   
     if((window.innerHeight/1.5) > abM){
@@ -59,7 +61,6 @@ serviceCardAll.forEach((serviceCard, i)=>{
 
 
 window.addEventListener("scroll", (e)=>{
-    console.log("inner Width:" + window.innerWidth);
     let windHeight = (window.innerHeight / 4); // 1000px
     let objectFromTop = title.getClientRects()[0].top; // from top 500px
     let abServiceCardabout = serviceCardabout.getClientRects()[0].top;
@@ -77,7 +78,7 @@ window.addEventListener("scroll", (e)=>{
       navbarFullDiv.classList.remove("bg_change")
     }
 
-    console.log(aboutSectionTop);
+    // console.log(aboutSectionTop);
     
    
     // aboutSection/....................
@@ -91,10 +92,9 @@ window.addEventListener("scroll", (e)=>{
     }
 
 
-    console.log("windowHeght " + windHeight + "     vfvfvfvfvfvfv" + equal);
+    // console.log("windowHeght " + windHeight + "     vfvfvfvfvfvfv" + equal);
     
     
-    console.log(title.getClientRects()[0].top);
 
 })
 

@@ -7,7 +7,8 @@
     align-items: center;
     flex-direction: column;
     gap: 20px;
-    background: linear-gradient(to left,rgb(102, 0, 255), rgb(77, 8, 182));
+    /* background: linear-gradient(rgb(16, 0, 46), rgb(27, 4, 69)); */
+    background: linear-gradient(to bottom,rgb(103, 2, 255), rgb(124, 37, 255), rgb(103, 2, 255));
 
 }
 

@@ -1,7 +1,19 @@
 const express = require("express");
+const  bodyParser = require("body-parser")
 const app = express();
 const path = require("path");
 require("dotenv").config();
+
+const userRoute = require('./routes/user.route');
+const connectDB = require('./config/database');
+
+
+
+
+app.use(express.json())
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended: true}))
+
 
 // Static files
 app.use(express.static(path.join(__dirname, "public")));
@@ -12,6 +24,18 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public/index.html"));
 });
 
+
+
+app.use("/", userRoute);
+
+
+
+
+
+
+
+
+
 // 👇 Only listen in local dev
 const PORT = process.env.PORT || 3000;
 if (require.main === module) {
@@ -19,5 +43,13 @@ if (require.main === module) {
     console.log(`Server running at http://localhost:${PORT}`);
   });
 }
+
+
+
+
+
+
+connectDB()
+
 
 module.exports = app;
