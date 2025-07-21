@@ -1,5 +1,5 @@
 
-import "./conatactMessage.js"
+import "/js/conatactMessage.js"
 
 
 window.addEventListener("load", ()=>{
