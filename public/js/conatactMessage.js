@@ -16,7 +16,7 @@ let formData = {
 
 
 inputValFNAll.forEach((datas,i)=>{
-    datas.addEventListener("keydown",  (e)=>{
+    datas.addEventListener("change",  (e)=>{
         const {name, value} = e.target;
         
         
@@ -26,11 +26,9 @@ inputValFNAll.forEach((datas,i)=>{
         }
         
         localStorage.setItem("formDataAuto", JSON.stringify(formData))
-        
         console.log(formData);
         
     })
-    
 });
 
 
