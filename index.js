@@ -1,28 +1,23 @@
 const express = require("express");
 const app = express();
-const route = express.Router();
+const path = require("path");
 require("dotenv").config();
-const path = require("path")
 
-const PORT = process.env.PORT;
-
-console.log(PORT);
-app.use(express.static(path.join(__dirname, "public")))
+// Static files
+app.use(express.static(path.join(__dirname, "public")));
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
 
-app.get("/", async(req, res)=>{
-    res.sendFile(path.join(__dirname, "public/index.html"))
-})
+// Routes
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "public/index.html"));
+});
 
+// 👇 Only listen in local dev
+const PORT = process.env.PORT || 3000;
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`Server running at http://localhost:${PORT}`);
+  });
+}
 
-
-app.listen(PORT, ()=>{
-    try {
-        console.log(`Server is Running at http://localhost:${PORT}`);
-        
-    } catch (error) {
-        console.log("Server Error:" + error.message);
-        process.exit(1)
-        
-    }
-})
+module.exports = app;
