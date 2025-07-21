@@ -36,7 +36,7 @@ contact_form.addEventListener("submit", async(e)=>{
     e.preventDefault();
 try {
     
-    const response = await fetch("/contact", {
+    const response = await fetch("https://devofficial.knowledgehut.online/contact", {
         method:"POST",
         headers:{
             "Content-Type":"application/json"

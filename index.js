@@ -9,8 +9,12 @@ const userRoute = require('./routes/user.route');
 const connectDB = require('./config/database');
 
 
+app.use(cors({
+  origin: "https://devofficial.knowledgehut.online",
+  methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+  credentials: true
+}));
 
-app.use(cors())
 app.use(express.json())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
