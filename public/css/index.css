@@ -6,6 +6,7 @@
 @import 
 @import 
 @import  */
+@import "./contactFormDiv.css";
 
 *{
     margin: 0;
@@ -118,8 +119,9 @@ a, button{
 .ServiceContainer{order: 1;}
 .about-section{order: 2;}
 .serviceCardMainDiv{order: 3;}
-.about-container{order: 5;}
 .displayCardMainDiv{order: 6;}
+.contactFormDiv{order: 5;}
+.about-container{order: 7;}
 /* ................ */
 
 

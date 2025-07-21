@@ -1,0 +1,96 @@
+.contactFormDiv{
+    height: auto;
+    width: 100%;
+    margin-top: 100px;
+    padding: 50px 0px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    background: linear-gradient(to left,rgb(102, 0, 255), rgb(77, 8, 182));
+
+}
+
+.contactFormDiv .contactTitle{
+    font-size: 30px;
+    color: white;
+    margin-bottom:   50px;
+}
+.contactFormDiv .form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    height: auto;
+    width: 70%;
+}
+
+.contactFormDiv .form .inputDiv{
+    min-height: 40px;
+    max-width: 300px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px 0px;
+}
+.contactFormDiv .form .inputDiv label{
+    color: white;
+}
+.contactFormDiv .form .inputDiv input{
+    height: 50px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    color: rgb(99, 9, 255);
+    padding: 0px 10px;
+    outline: none;
+}
+
+.contactFormDiv .form .messageInp{   
+    max-width: none;
+    width: 100%;
+
+}
+.contactFormDiv .form .messageInp .messageDiv{
+    min-height: 200px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+    border: none;
+    color: rgb(99, 9, 255);
+    outline: none;
+
+    padding: 10px;
+    text-align: start;
+}
+
+.buttonDiv{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+
+}
+.buttonDiv button{
+    height:50px;
+    width: 150px;
+    border: navajowhite;
+    font-size: 18px;
+    border-radius: 20px;
+    color: rgb(115, 0, 255);
+    background-color: rgb(115, 0, 255);
+    background-color: white;
+}
+
+
+@media (max-width: 890px){
+    .contactFormDiv .form .inputDiv{
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .contactFormDiv .form{
+        width: 85%;
+    }
+}

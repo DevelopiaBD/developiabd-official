@@ -21,8 +21,8 @@
             overflow: hidden;
             background: rgba(255, 255, 255, 0.25); /* More transparent white for glass effect */
             border-radius: 1.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.3); /* Crispier border */
-            box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.45); /* Stronger glass morphism shadow */
+            /* border: 1px solid rgba(255, 255, 255, 0.3); 
+            box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.45);  */
             backdrop-filter: blur(15px); /* Increased blur for stronger glass effect */
             -webkit-backdrop-filter: blur(15px);
             padding: 1.5rem;
@@ -32,7 +32,9 @@
             text-align: center;
             position: relative;
             z-index: 1;
-            transition: all 0.4s ease-in-out; /* Smoother transition */
+            transition: all 0.4s ease-in-out;
+            background-color: rgb(241, 247, 255);
+            margin-top: 100px;
         }
 
         /* Pseudo-elements for floating colors - more prominent */
@@ -51,9 +53,10 @@
         .about-container::before {
             width: 200px; /* Larger */
             height: 200px;
-            background: linear-gradient(135deg, #6366f1, #FF1493); /* Indigo to Deep Pink */
+            background: linear-gradient(135deg, #6366f1, #FF1493); 
             top: -50px; /* More initial offset */
             left: -50px;
+            display: none;
         }
 
         .about-container::after {
@@ -62,7 +65,10 @@
             background: linear-gradient(45deg, #FF1493, #6366f1); /* Deep Pink to Indigo */
             bottom: -50px; /* More initial offset */
             right: -50px;
+            display: none;
         }
+
+
 
         /* :hover */
         .about-container::before {
@@ -97,12 +103,13 @@
         }
 
         .about-image {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
+            width: 100%;
+            height: 250px;
+            /* border-radius: 50%; */
             object-fit: cover;
-            border: 4px solid #6366f1; /* Indigo border */
-            box-shadow: 0 0 0 3px #FF1493; /* Dark pink outer glow */
+            border: 4px solid #909ef5; 
+            box-shadow: 0 0 0 5px #7e14ff; 
+            border-radius: 15px;
         }
 
         .about-content {
@@ -112,7 +119,16 @@
             padding-right: 0.5rem;
             /* Custom scrollbar for better aesthetics within fixed height */
             scrollbar-width: thin; /* Firefox */
-            scrollbar-color: #6366f1 #f1f1f1; /* thumb and track color */
+            scrollbar-color: #6366f1 #f1f1f1;
+        }
+
+        @media (max-width: 775px){
+            .about-content{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
         }
 
         .about-content::-webkit-scrollbar {
@@ -132,23 +148,44 @@
 
 
         .about-title {
-            font-size: 1.8rem;
+            font-size: 2rem;
             color: #1f2937; /* Dark gray for strong contrast */
             margin-bottom: 0.5rem;
             line-height: 1.2;
         }
 
         .about-subtitle {
-            font-size: 1rem;
+            font-size: 1.3rem;
             color: #FF1493; /* Dark pink for emphasis */
             margin-bottom: 0.75rem;
         }
 
         .about-paragraph {
-            font-size: 0.9rem;
+            font-size: 1rem;
             color: #374151; /* Darker gray for better readability on glass */
             line-height: 1.5;
             margin-bottom: 0.75rem;
+        }
+
+        @media (max-width: 500px) {
+            .about-image{
+                height: 200px;
+                width: auto;
+            }
+        .about-title {
+            font-size: 1.3rem;
+        }
+        .about-subtitle {
+            font-size: 1rem;
+        }
+            .about-paragraph {
+                font-size: 0.8rem;
+                margin-bottom: 20px;
+            }
+        .about-details-list li{
+            font-size: 0.9rem;
+
+        }
         }
 
         .about-details-list {
@@ -163,7 +200,11 @@
             align-items: flex-start;
             margin-bottom: 0.5rem;
             color: #374151;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
+            /* text-align: justify; */
+            /* width: 100%; */
+            /* hyphens: auto; */
+
         }
 
         .detail-icon {
@@ -186,6 +227,7 @@
             .social-links {
                 justify-content: flex-start;
             }
+      
         }
 
         .social-link {
