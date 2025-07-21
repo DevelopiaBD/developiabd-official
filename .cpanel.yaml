@@ -1,0 +1,9 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/knowledg/developiabd-official
+    - echo "✅ Git Pull Done. Now installing dependencies..."
+    - cd $DEPLOYPATH
+    - /home/knowledg/nodevenv/developiabd-official/20/bin/npm install
+    - echo "✅ npm install complete."
+    - touch $DEPLOYPATH/tmp/restart.txt
