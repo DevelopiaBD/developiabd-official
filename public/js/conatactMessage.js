@@ -35,7 +35,7 @@ inputValFNAll.forEach((datas,i)=>{
 
 
 contact_form.addEventListener("submit", async(e)=>{
-    e.preventDefault();
+    
 try {
     
     const response = await fetch("/contact", {
