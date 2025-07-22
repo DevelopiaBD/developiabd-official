@@ -7,6 +7,17 @@
 @import url("/css/AboutSectionDev.css");
 @import url("/css/Aboutme.css");
 @import url("/css/contactFormDiv.css");
+@import url("/css/footer.css");
+
+/* @import "CoversAndShortCards.css";
+@import "MainBodyInfo.css";
+@import "experimental.css";
+@import "service_plans.css";
+@import "AboutSectionDev.css";
+@import "Aboutme.css";
+@import "contactFormDiv.css";
+@import "footer.css"; */
+
 
 *{
     margin: 0;
