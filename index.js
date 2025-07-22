@@ -43,11 +43,11 @@ app.use("/", userRoute);
 
 // 👇 Only listen in local dev
 const PORT = process.env.PORT || 3000;
-if (require.main === module) {
+
   app.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);
   });
-}
+
 
 
 
