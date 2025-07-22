@@ -8,9 +8,9 @@ require("dotenv").config();
 const userRoute = require('./routes/user.route');
 const connectDB = require('./config/database');
 
-// https://devofficial.knowledgehut.online
+
 app.use(cors({
-  origin: "*",
+  origin: "https://devofficial.knowledgehut.online",
   methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
   credentials: true
 }));
