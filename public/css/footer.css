@@ -1,5 +1,7 @@
 footer{
     min-height: 200px;
-    width: 80vw;
-    background-color: rgb(3, 0, 31);
+    width: 100vw;
+    margin-top: 100px;
+
+    background-color: rgb(7, 0, 71);
 }
