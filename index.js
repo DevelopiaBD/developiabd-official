@@ -9,11 +9,11 @@ const userRoute = require('./routes/user.route');
 const connectDB = require('./config/database');
 
 
-app.use(cors({
-  origin: "https://devofficial.knowledgehut.online",
-  methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
-  credentials: true
-}));
+// app.use(cors({
+//   origin: "https://devofficial.knowledgehut.online",
+//   methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+//   credentials: true
+// }));
 
 app.use(express.json())
 app.use(bodyParser.json())
@@ -21,13 +21,13 @@ app.use(bodyParser.urlencoded({extended: true}))
 
 
 // Static files
-app.use(express.static(path.join(__dirname, "public")));
-app.use('/assets', express.static(path.join(__dirname, 'assets')));
+// app.use(express.static(path.join(__dirname, "public")));
+// app.use('/assets', express.static(path.join(__dirname, 'assets')));
 
-// Routes
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "public/index.html"));
-});
+// // Routes
+// app.get("/", (req, res) => {
+//   res.sendFile(path.join(__dirname, "public/index.html"));
+// });
 
 
 
