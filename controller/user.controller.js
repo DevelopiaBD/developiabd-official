@@ -3,6 +3,7 @@ const Contact = require("../models/contact.model.js")
 
 const userMessages = async(req, res)=>{
     const {name, phone, message, email, country} = req.body;
+console.log(name, phone, message, email, country);
 
     try {
         if(!name || !phone || !message || !email || !country){

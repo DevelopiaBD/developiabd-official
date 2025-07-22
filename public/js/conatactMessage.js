@@ -1,66 +1,41 @@
 const contact_form = document.getElementById("contact_form");
 const inputValFNAll = document.querySelectorAll(".inputValFN");
 
+let formData = {}; // Keep it outside
 
-
-const actionForForm= ()=>{
-let formData = {
-    // name:"",
-    // phone:"",
-    // message:"",
-    // email:"",
-    // country:""
-};
-
-
-
-
-inputValFNAll.forEach((datas,i)=>{
-    datas.addEventListener("change",  (e)=>{
-        const {name, value} = e.target;
-        
-        
-        formData = {
-            ...formData,
-            [name]: value
-        }
-        
-        localStorage.setItem("formDataAuto", JSON.stringify(formData))
-        console.log(formData);
-        
-    })
+// Auto update formData on input change
+inputValFNAll.forEach((input) => {
+  input.addEventListener("input", (e) => {
+    formData[e.target.name] = e.target.value;
+    localStorage.setItem("formDataAuto", JSON.stringify(formData));
+    console.log(formData);
+  });
 });
 
+// On form submit
+contact_form.addEventListener("submit", async (e) => {
+  e.preventDefault();
 
-contact_form.addEventListener("submit", async(e)=>{
-    e.preventDefault();
-try {
-    
-    const response = await fetch("https://devofficial.knowledgehut.online/contact", {
-        method:"POST",
-        headers:{
-            "Content-Type":"application/json"
-        },
-        body: JSON.stringify(formData)
+  try {
+    const response = await fetch("https://apidevoff.knowledgehut.online/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(formData)
     });
 
     const result = await response.json();
-    console.log(result.message)
-    if(response.ok){
-        alert("Your Message Send SuccessFully. Very Soon We Will Conatact You")
+
+    if (response.ok) {
+      alert("✅ Message Sent Successfully. We’ll contact you soon.");
+    } else {
+      const error = result.message || "⚠️ Something went wrong.";
+      alert(error);
     }
-    else{
-        const error = result.message? result.message: "I Think Net Problem. Try Again Letter!!";
-        alert(error)
-    }
+
   } catch (error) {
-    console.log(error.message);
-    
+    console.error("❌ Fetch Error:", error.message);
+    alert("❌ Network error. Try again later.");
   }
-        
-})
-}
-
-
-
-actionForForm()
+});
